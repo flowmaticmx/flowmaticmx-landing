@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flowmatic — Automatización & IA para vender más</title>
+  <meta name="description" content="Flowmatic: Automatizaciones, chatbots y agentes IA que ahorran tiempo, captan clientes y cierran ventas 24/7." />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config — custom brand palette
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+          colors: {
+            brand: {
+              50: '#ecfeff', 100: '#cffafe', 200: '#a5f3fc', 300: '#67e8f9', 400: '#22d3ee',
+              500: '#06b6d4', 600: '#0891b2', 700: '#0e7490', 800: '#155e75', 900: '#164e63'
+            },
+          },
+          boxShadow: {
+            soft: '0 10px 30px -12px rgba(2, 132, 199, 0.25)'
+          },
+          backgroundImage: {
+            'grid-light': 'radial-gradient(circle at 1px 1px, rgba(2,132,199,.15) 1px, transparent 0)',
+            'radial-fade': 'radial-gradient(1200px 500px at 50% -10%, rgba(14,116,144,.25), transparent)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root { color-scheme: light dark; }
+    html { scroll-padding-top: 84px; }
+  </style>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Flowmatic — Automatización & IA" />
+  <meta property="og:description" content="Chatbots y agentes IA que atienden 24/7 y convierten más ventas." />
+  <meta property="og:image" content="https://dummyimage.com/1200x630/0ea5e9/ffffff&text=Flowmatic" />
+  <meta property="og:locale" content="es_MX" />
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Flowmatic",
+    "url": "https://flowmatic.mx/",
+    "logo": "https://dummyimage.com/256x256/0ea5e9/ffffff&text=F",
+    "sameAs": [
+      "https://www.instagram.com/flowmaticmx",
+      "https://www.facebook.com/profile.php?id=61580941994999"
+    ]
+  }
+  </script>
+</head>
+<body class="min-h-screen bg-white text-slate-900 [background-size:20px_20px] bg-grid-light">
+  <!-- Header -->
+  <header class="fixed inset-x-0 top-0 z-50 backdrop-blur bg-white/70 border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-[72px] items-center justify-between">
+        <a href="#" class="flex items-center gap-3">
+          <img src="Flowmatic-logo.gif" alt="Flowmatic logo" class="h-9 w-auto" />
+          <span class="font-semibold tracking-tight">Flowmatic</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <a href="#servicios" class="hover:text-brand-700">Servicios</a>
+          <a href="#casos" class="hover:text-brand-700">Casos</a>
+          <a href="#precios" class="hover:text-brand-700">Planes</a>
+          <a href="#faq" class="hover:text-brand-700">FAQ</a>
+          <a href="#contacto" class="hover:text-brand-700">Contacto</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <a href="https://wa.me/525514552572?text=Hola%20Flowmatic%2C%20quiero%20una%20demo" target="_blank" class="hidden sm:inline-flex items-center rounded-xl bg-brand-600 px-4 py-2 text-white font-semibold shadow-soft hover:bg-brand-700 transition">WhatsApp</a>
+          <button id="menuBtn" class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-xl border border-slate-200">
+            <span class="sr-only">Abrir menú</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobileNav" class="md:hidden hidden pb-4">
+        <div class="grid gap-2 text-sm font-medium">
+          <a href="#servicios" class="px-3 py-2 rounded-lg hover:bg-slate-50">Servicios</a>
+          <a href="#casos" class="px-3 py-2 rounded-lg hover:bg-slate-50">Casos</a>
+          <a href="#precios" class="px-3 py-2 rounded-lg hover:bg-slate-50">Planes</a>
+          <a href="#faq" class="px-3 py-2 rounded-lg hover:bg-slate-50">FAQ</a>
+          <a href="#contacto" class="px-3 py-2 rounded-lg hover:bg-slate-50">Contacto</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative pt-36 pb-20 bg-radial-fade overflow-hidden">
+    <div class="absolute inset-x-0 -top-40 -z-10 h-96 blur-3xl opacity-60" aria-hidden="true">
+      <div class="mx-auto max-w-5xl h-full bg-gradient-to-br from-brand-400/30 via-brand-500/20 to-sky-500/10 rounded-full"></div>
+    </div>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-6">
+          <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-brand-700 bg-brand-50 px-3 py-1 rounded-full border border-brand-100">Agencia IA • Chatbots • n8n</p>
+          <h1 class="mt-5 text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight">
+            Automatiza tu negocio y <span class="text-brand-600">vende 24/7</span>
+          </h1>
+          <p class="mt-4 text-slate-600 text-lg">Creamos sistemas inteligentes que responden al instante, generan leads y gestionan tus citas sin que muevas un dedo.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="https://wa.me/525514552572?text=Hola%20Flowmatic%2C%20quiero%20una%20demo" target="_blank" class="inline-flex items-center rounded-xl bg-slate-900 text-white px-5 py-3 font-semibold hover:bg-slate-800">Agendar demo</a>
+            <a href="#precios" class="inline-flex items-center rounded-xl border border-slate-300 px-5 py-3 font-semibold hover:bg-slate-100">Ver planes</a>
+          </div>
+          <div class="mt-6 flex items-center gap-6 text-sm text-slate-600">
+            <div class="flex items-center gap-2"><svg class="h-5 w-5 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7l-8 10-5-5"/></svg><span>Respuesta en minutos</span></div>
+            <div class="flex items-center gap-2"><svg class="h-5 w-5 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg><span>Implementación rápida</span></div>
+          </div>
+        </div>
+        <div class="lg:col-span-6">
+          <div class="relative">
+            <div class="absolute -inset-1 bg-gradient-to-tr from-brand-400/40 to-sky-400/30 blur-2xl rounded-3xl"></div>
+            <div class="relative rounded-3xl border border-slate-200 shadow-soft bg-white overflow-hidden">
+              <div class="px-5 py-4 border-b border-slate-200 flex items-center gap-2">
+                <div class="h-3 w-3 rounded-full bg-rose-400"></div>
+                <div class="h-3 w-3 rounded-full bg-amber-400"></div>
+                <div class="h-3 w-3 rounded-full bg-emerald-400"></div>
+                <span class="ml-2 text-xs text-slate-500">Simulación chatbot</span>
+              </div>
+              <div class="p-6 grid gap-3 text-sm">
+                <div class="flex gap-3 items-start"><div class="h-9 w-9 rounded-full bg-slate-100 grid place-items-center">🤖</div><div class="bg-slate-50 border border-slate-200 p-3 rounded-2xl max-w-[36ch]">Hola, soy Flow tu asistente inteligente. ¿Te gustaría reservar una cita o te muestro el menú de servicios?</div></div>
+                <div class="flex gap-3 items-start justify-end"><div class="bg-brand-50 border border-brand-200 p-3 rounded-2xl max-w-[36ch]">Quiero una demo mañana a las 5 pm.</div><div class="h-9 w-9 rounded-full bg-brand-100 grid place-items-center">🧑🏻‍💼</div></div>
+                <div class="flex gap-3 items-start"><div class="h-9 w-9 rounded-full bg-slate-100 grid place-items-center">🤖</div><div class="bg-slate-50 border border-slate-200 p-3 rounded-2xl max-w-[36ch]">Listo ✔️ Te agendé y te envié una confirmación por WhatsApp.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logos social proof -->
+  <section class="py-10">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center text-slate-500 text-sm">Confiado por negocios de retail, salud, gastronomía y servicios</div>
+      <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 opacity-80">
+        <div class="h-10 bg-slate-100 rounded-xl"></div>
+        <div class="h-10 bg-slate-100 rounded-xl"></div>
+        <div class="h-10 bg-slate-100 rounded-xl"></div>
+        <div class="h-10 bg-slate-100 rounded-xl"></div>
+        <div class="h-10 bg-slate-100 rounded-xl"></div>
+        <div class="h-10 bg-slate-100 rounded-xl"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="py-20 bg-slate-50 border-y border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl font-bold tracking-tight">Lo que hacemos</h2>
+        <p class="mt-3 text-slate-600">Automatizaciones hechas a medida para ahorrar tiempo y aumentar tus ingresos.</p>
+      </div>
+      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Card -->
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-soft transition">
+          <div class="h-10 w-10 rounded-xl bg-brand-100 grid place-items-center">💬</div>
+          <h3 class="mt-4 font-semibold">Chatbots en WhatsApp / Instagram</h3>
+          <p class="mt-2 text-slate-600 text-sm">Respuestas 24/7, captación de clientes, reservas y pagos. Integración con ManyChat y WhatsApp Business.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-soft transition">
+          <div class="h-10 w-10 rounded-xl bg-brand-100 grid place-items-center">🔁</div>
+          <h3 class="mt-4 font-semibold">Flujos en n8n e integraciones</h3>
+          <p class="mt-2 text-slate-600 text-sm">Automatiza procesos con CRMs, Google Sheets, Supabase/Postgres, correos, webhooks y APIs.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-soft transition">
+          <div class="h-10 w-10 rounded-xl bg-brand-100 grid place-items-center">🧠</div>
+          <h3 class="mt-4 font-semibold">Agentes de IA</h3>
+          <p class="mt-2 text-slate-600 text-sm">Asistentes que entienden preguntas, consultan bases de datos y ejecutan acciones.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-soft transition">
+          <div class="h-10 w-10 rounded-xl bg-brand-100 grid place-items-center">📅</div>
+          <h3 class="mt-4 font-semibold">Reservas y recordatorios</h3>
+          <p class="mt-2 text-slate-600 text-sm">Agenda automática, confirmaciones y seguimiento por WhatsApp/Email.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-soft transition">
+          <div class="h-10 w-10 rounded-xl bg-brand-100 grid place-items-center">📈</div>
+          <h3 class="mt-4 font-semibold">Dashboards & reporting</h3>
+          <p class="mt-2 text-slate-600 text-sm">Métricas en tiempo real para decisiones rápidas.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 hover:shadow-soft transition">
+          <div class="h-10 w-10 rounded-xl bg-brand-100 grid place-items-center">🔐</div>
+          <h3 class="mt-4 font-semibold">Implementación segura</h3>
+          <p class="mt-2 text-slate-600 text-sm">Buenas prácticas, control de accesos y monitoreo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Casos de éxito -->
+  <section id="casos" class="py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl font-bold tracking-tight">Resultados reales</h2>
+        <p class="mt-3 text-slate-600">Algunos ejemplos de impacto con automatización y agentes IA.</p>
+      </div>
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        <article class="rounded-2xl border border-slate-200 overflow-hidden bg-white">
+          <div class="h-40 bg-gradient-to-br from-brand-200 to-brand-100"></div>
+          <div class="p-6">
+            <h3 class="font-semibold">Restaurante: reservas 24/7</h3>
+            <p class="mt-2 text-sm text-slate-600">+38% en ocupación semanal usando WhatsApp y n8n para confirmaciones y recordatorios.</p>
+          </div>
+        </article>
+        <article class="rounded-2xl border border-slate-200 overflow-hidden bg-white">
+          <div class="h-40 bg-gradient-to-br from-emerald-200 to-emerald-100"></div>
+          <div class="p-6">
+            <h3 class="font-semibold">Clínica: agenda inteligente</h3>
+            <p class="mt-2 text-sm text-slate-600">-45% en ausencias; chatbot reprograma y envía indicaciones pre‑cita automáticamente.</p>
+          </div>
+        </article>
+        <article class="rounded-2xl border border-slate-200 overflow-hidden bg-white">
+          <div class="h-40 bg-gradient-to-br from-amber-200 to-amber-100"></div>
+          <div class="p-6">
+            <h3 class="font-semibold">Retail: leads calificados</h3>
+            <p class="mt-2 text-sm text-slate-600">+27% enventas mes a mes con embudos y seguimiento automático multicanal.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Planes -->
+  <section id="precios" class="py-20 bg-slate-50 border-y border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl font-bold tracking-tight">Planes simples, resultados claros</h2>
+        <p class="mt-3 text-slate-600">personalizamos según tu operación.</p>
+      </div>
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        <!-- Start -->
+        <div class="relative rounded-2xl border border-slate-200 bg-white p-6">
+          <div class="absolute -top-3 left-6 inline-block rounded-full bg-slate-900 text-white text-xs font-semibold px-2 py-1">Recomendado</div>
+          <h3 class="font-semibold">Starter</h3>
+          <p class="mt-1 text-sm text-slate-600">Ideal para comenzar</p>
+          <div class="mt-4 text-3xl font-extrabold"> <span class="text-base font-medium text-slate-500"></span></div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-700">
+            <li class="flex gap-2"><span>✔</span> 1 chatbot (WhatsApp o Instagram)</li>
+            <li class="flex gap-2"><span>✔</span> 1 flujo n8n básico</li>
+            <li class="flex gap-2"><span>✔</span> Respuestas/menus, formulario de leads</li>
+            <li class="flex gap-2"><span>✔</span> Soporte por WhatsApp</li>
+          </ul>
+          <a href="https://wa.me/525514552572?text=Quiero%20el%20plan%20Start%20de%20Flowmatic" class="mt-6 inline-flex w-full justify-center rounded-xl bg-brand-600 text-white px-4 py-2.5 font-semibold hover:bg-brand-700">Cotizar</a>
+        </div>
+        <!-- Growth -->
+        <div class="relative rounded-2xl border-2 border-brand-300 bg-white p-6 shadow-soft">
+          <div class="absolute -top-3 left-6 inline-block rounded-full bg-brand-600 text-white text-xs font-semibold px-2 py-1">Más popular</div>
+          <h3 class="font-semibold">Pro</h3>
+          <p class="mt-1 text-sm text-slate-600">Automatización en serio</p>
+          <div class="mt-4 text-3xl font-extrabold"> <span class="text-base font-medium text-slate-500"> </span></div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-700">
+            <li class="flex gap-2"><span>✔</span> 2 chatbots (WA/IG) + multicanal</li>
+            <li class="flex gap-2"><span>✔</span> 3 flujos n8n (reservas, CRM, correos)</li>
+            <li class="flex gap-2"><span>✔</span> Agente IA con respuestas avanzadas</li>
+            <li class="flex gap-2"><span>✔</span> Dashboards básicos</li>
+          </ul>
+          <a href="https://wa.me/525514552572?text=Quiero%20el%20plan%20Growth%20de%20Flowmatic" class="mt-6 inline-flex w-full justify-center rounded-xl bg-slate-900 text-white px-4 py-2.5 font-semibold hover:bg-slate-800">Cotizar</a>
+        </div>
+        <!-- Pro -->
+        <div class="relative rounded-2xl border border-slate-200 bg-white p-6">
+          <h3 class="font-semibold">Full Automation</h3>
+          <p class="mt-1 text-sm text-slate-600">A medida para escalar</p>
+          <div class="mt-4 text-3xl font-extrabold"> <span class="text-base font-medium text-slate-500"> </span></div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-700">
+            <li class="flex gap-2"><span>✔</span> Omnicanal (WA/IG/Telegram/Web)</li>
+            <li class="flex gap-2"><span>✔</span> 6+ flujos n8n y webhooks</li>
+            <li class="flex gap-2"><span>✔</span> Agente IA con base de conocimiento</li>
+            <li class="flex gap-2"><span>✔</span> KPI y reportes avanzados</li>
+          </ul>
+          <a href="https://wa.me/525514552572?text=Quiero%20el%20plan%20Pro%20de%20Flowmatic" class="mt-6 inline-flex w-full justify-center rounded-xl border border-slate-300 px-4 py-2.5 font-semibold hover:bg-slate-100">Cotizar</a>
+        </div>
+      </div>
+      <p class="mt-4 text-xs text-slate-500">Integraciones de terceros (APIs, Meta, WhatsApp Business, hosting) se cotizan por separado.</p>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section class="py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl font-bold tracking-tight">Clientes felices</h2>
+        <p class="mt-3 text-slate-600">Lo que dicen de trabajar con Flowmatic.</p>
+      </div>
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        <figure class="rounded-2xl border border-slate-200 bg-white p-6">
+          <blockquote class="text-slate-700">“En 2 semanas ya teníamos reservas automáticas y reducción del 40% en llamadas.”</blockquote>
+          <figcaption class="mt-4 text-sm text-slate-500">María, dueña de restaurante</figcaption>
+        </figure>
+        <figure class="rounded-2xl border border-slate-200 bg-white p-6">
+          <blockquote class="text-slate-700">“El agente IA responde preguntas y cierra citas sin intervención.”</blockquote>
+          <figcaption class="mt-4 text-sm text-slate-500">Dr. Pérez, clínica dental</figcaption>
+        </figure>
+        <figure class="rounded-2xl border border-slate-200 bg-white p-6">
+          <blockquote class="text-slate-700">“Dejamos de perder clientes; el seguimiento es automático y medible.”</blockquote>
+          <figcaption class="mt-4 text-sm text-slate-500">Daniela, retail</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 bg-slate-50 border-y border-slate-200">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold tracking-tight">Preguntas frecuentes</h2>
+      <div class="mt-8 divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white">
+        <details class="group p-6">
+          <summary class="flex cursor-pointer items-center justify-between font-medium list-none">¿Cuánto tarda la implementación?
+            <svg class="h-5 w-5 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="mt-2 text-slate-600">Entre 3 y 4 días según el alcance, integraciones y contenido.</p>
+        </details>
+        <details class="group p-6">
+          <summary class="flex cursor-pointer items-center justify-between font-medium list-none">¿Necesito WhatsApp Business API?
+            <svg class="h-5 w-5 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="mt-2 text-slate-600">Para envíos masivos y plantillas aprobadas, sí. Podemos orientarte en el alta.</p>
+        </details>
+        <details class="group p-6">
+          <summary class="flex cursor-pointer items-center justify-between font-medium list-none">¿Qué incluye el soporte?
+            <svg class="h-5 w-5 transition group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <p class="mt-2 text-slate-600">Mantenimiento, ajustes y monitoreo básico del sistema.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="py-20">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl border border-slate-200 bg-white p-8 shadow-soft">
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <h2 class="text-3xl font-bold tracking-tight">Hablemos de tu proyecto</h2>
+            <p class="mt-3 text-slate-600">Cuéntanos sobre tu negocio y te proponemos un plan en menos de 24 h.</p>
+            <div class="mt-6 space-y-3 text-sm">
+              <a class="inline-flex items-center gap-2 text-brand-700 hover:underline" href="https://wa.me/525514552572" target="_blank">📱 WhatsApp: +52 55 1455 2572</a><br>
+              <a class="inline-flex items-center gap-2 text-brand-700 hover:underline" href="mailto:flowmatic.mx@allux.com.mx">✉️ flowmatic.mx@gmail.com.mx</a><br>
+              <a class="inline-flex items-center gap-2 text-brand-700 hover:underline" href="https://www.instagram.com/flowmaticmx" target="_blank">🌐 Instagram</a> ·
+              <a class="inline-flex items-center gap-2 text-brand-700 hover:underline" href="https://www.facebook.com/profile.php?id=61580941994999" target="_blank">Facebook</a>
+            </div>
+          </div>
+          <form class="grid gap-4" action="https://formspree.io/f/your-id" method="POST">
+            <div class="grid gap-2">
+              <label class="text-sm font-medium">Nombre</label>
+              <input type="text" name="nombre" required class="rounded-xl border border-slate-300 px-4 py-2.5 outline-none focus:ring-2 focus:ring-brand-300" placeholder="Tu nombre" />
+            </div>
+            <div class="grid gap-2">
+              <label class="text-sm font-medium">Email</label>
+              <input type="email" name="email" required class="rounded-xl border border-slate-300 px-4 py-2.5 outline-none focus:ring-2 focus:ring-brand-300" placeholder="tucorreo@dominio.com" />
+            </div>
+            <div class="grid gap-2">
+              <label class="text-sm font-medium">Mensaje</label>
+              <textarea name="mensaje" rows="4" class="rounded-xl border border-slate-300 px-4 py-2.5 outline-none focus:ring-2 focus:ring-brand-300" placeholder="Cuéntanos qué necesitas"></textarea>
+            </div>
+            <button type="submit" class="rounded-xl bg-brand-600 text-white px-4 py-2.5 font-semibold hover:bg-brand-700">Enviar</button>
+            <p class="text-xs text-slate-500">Al enviar aceptas nuestra política de privacidad.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA final -->
+  <section class="py-16">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl bg-slate-900 text-white p-10 grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h3 class="text-2xl font-bold">Listo para automatizar?</h3>
+          <p class="mt-2 text-slate-300">Transforma la atención al cliente y deja de perder ventas hoy.</p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a href="https://calendly.com/tu-calendly/demo" target="_blank" class="inline-flex items-center rounded-xl bg-white text-slate-900 px-5 py-3 font-semibold">Agendar demo</a>
+          <a href="https://wa.me/525514552572" target="_blank" class="inline-flex items-center rounded-xl border border-white/20 px-5 py-3 font-semibold">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <img src="Flowmatic-logo.gif" alt="Flowmatic logo" class="h-8 w-auto" />
+          <div class="text-sm text-slate-600">© <span id="year"></span> Flowmatic. Donde las ideas fluyen y la tecnología hace magia.</div>
+        </div>
+        <div class="text-sm text-slate-600">CDMX · México</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Año dinámico
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Menú móvil
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    if (menuBtn) menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+  </script>
+</body>
+</html>
